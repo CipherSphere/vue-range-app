@@ -1,0 +1,6 @@
+- id, status, started at object for each lane
+- an array of the lanes is generated from the lane amount from the init screen
+- initialization screen to select amount of lanes store that in local storage
+- if it is already initizalied, then go straight to lane view which will show all the lanes and their statuses from local storage
+- lane screen should show each lane and its status, as well as a way to select its status ('Executive', 'Instructor', 'Member', 'Guest', 'Down', 'Open')
+- lane component should set the lane object started_at time as the current time when you select a status
