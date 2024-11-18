@@ -50,6 +50,12 @@ export const useLaneStore = defineStore('lanes', {
         lane.started_at = startTime;
         this.saveLanesToStorage();
       }
-    }    
-  }
-});
+    },
+
+    uninitializeLanes() {
+      this.lanes = [];
+      this.isInitialized = false;
+      localStorage.removeItem('lanes');
+      localStorage.removeItem('isInitialized');
+    }
+  }});
