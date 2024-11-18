@@ -18,6 +18,7 @@
               id="laneCount"
               v-model="laneCount"
               min="1"
+              max="99"
               class="px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
             >
           </div>
@@ -43,7 +44,16 @@
   const laneCount = ref(1);
   
   const initialize = () => {
+    if (laneCount.value > 99) {
+      alert('Maximum number of lanes is 99');
+      return;
+    }
+  
+    if (laneCount.value < 1) {
+      alert('Minimum number of lanes is 1');
+      return;
+    }
+
     store.initializeLanes(laneCount.value);
-    router.push('/lanes')
-  };
-  </script>  
+    router.push('/lanes');
+  };  </script>  

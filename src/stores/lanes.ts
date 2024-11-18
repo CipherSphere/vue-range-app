@@ -9,7 +9,8 @@ export const useLaneStore = defineStore('lanes', {
 
   actions: {
     initializeLanes(laneCount: number) {
-      this.lanes = Array.from({ length: laneCount }, (_, index) => ({
+      const validLaneCount = Math.min(Math.max(1, laneCount), 99);
+      this.lanes = Array.from({ length: validLaneCount }, (_, index) => ({
         id: index + 1,
         status: 'Open',
         started_at: null
