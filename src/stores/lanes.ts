@@ -41,6 +41,15 @@ export const useLaneStore = defineStore('lanes', {
     saveLanesToStorage() {
       localStorage.setItem('lanes', JSON.stringify(this.lanes));
       localStorage.setItem('isInitialized', JSON.stringify(this.isInitialized));
-    }
+    },
+
+    updateLaneStartTime(laneId: number, startTime: string) {
+      const lane = this.lanes.find(l => l.id === laneId);
+      
+      if (lane) {
+        lane.started_at = startTime;
+        this.saveLanesToStorage();
+      }
+    }    
   }
 });
