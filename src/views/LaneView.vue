@@ -1,10 +1,10 @@
-  <template>
-  <div class="min-h-screen bg-gray-50 p-6">
+<template>
+  <div class="min-h-screen bg-gray-900 p-6">
     <div class="mx-auto">
       <div class="flex justify-end mb-4">
         <button 
           @click="handleReset" 
-          class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md"
+          class="bg-red-600 hover:bg-red-700 text-gray-100 px-4 py-2 rounded-md transition-colors duration-200"
         >
           Reset All Lanes
         </button>
