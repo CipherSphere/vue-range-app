@@ -6,7 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/REPONAME/",
+  base: "/vue-range-app/",
   plugins: [
     vue(),
     vueDevTools(),
