@@ -7,7 +7,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: '/',
+      path: '/vue-range-app/',
       name: 'init',
       component: InitScreen,
       beforeEnter: (to, from, next) => {
@@ -21,7 +21,7 @@ const router = createRouter({
       }
     },
     {
-      path: '/lanes',
+      path: '/vue-range-app/lanes',
       name: 'lanes',
       component: LaneView,
       beforeEnter: (to, from, next) => {
