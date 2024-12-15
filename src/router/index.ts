@@ -14,7 +14,7 @@ const router = createRouter({
         const store = useLaneStore()
         store.loadFromStorage()
         if (store.isInitialized) {
-          next('/lanes')
+          next('/vue-range-app/lanes')
         } else {
           next()
         }
@@ -28,7 +28,7 @@ const router = createRouter({
         const store = useLaneStore()
         store.loadFromStorage()
         if (!store.isInitialized) {
-          next('/')
+          next('/vue-range-app/')
         } else {
           next()
         }

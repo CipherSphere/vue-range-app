@@ -55,6 +55,6 @@ const initialize = () => {
   }
 
   store.initializeLanes(laneCount.value);
-  router.push('/lanes');
+  router.push('/vue-range-app/lanes');
 };
 </script>  

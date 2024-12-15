@@ -30,6 +30,6 @@ const router = useRouter();
 
 const handleReset = () => {
   store.uninitializeLanes();
-  router.push('/');
+  router.push('/vue-range-app/');
 };
 </script>
