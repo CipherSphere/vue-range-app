@@ -13,7 +13,8 @@ export const useLaneStore = defineStore('lanes', {
       this.lanes = Array.from({ length: validLaneCount }, (_, index) => ({
         id: index + 1,
         status: 'Open',
-        started_at: null
+        started_at: null,
+        isRental: false, // Initialize isRental property
       }));
       this.isInitialized = true;
       this.saveLanesToStorage();
@@ -21,7 +22,7 @@ export const useLaneStore = defineStore('lanes', {
 
     updateLaneStatus(laneId: number, status: Lane['status']) {
       const lane = this.lanes.find(l => l.id === laneId);
-    
+
       if (lane) {
         lane.status = status;
         lane.started_at = new Date().toISOString();
@@ -29,10 +30,18 @@ export const useLaneStore = defineStore('lanes', {
       }
     },
 
+    toggleRentalStatus(laneId: number) {
+      const lane = this.lanes.find(l => l.id === laneId);
+      if (lane) {
+        lane.isRental = !lane.isRental; // Toggle the isRental property
+        this.saveLanesToStorage();
+      }
+    },
+
     loadFromStorage() {
       const storedLanes = localStorage.getItem('lanes');
       const storedInit = localStorage.getItem('isInitialized');
-      
+
       if (storedLanes && storedInit) {
         this.lanes = JSON.parse(storedLanes);
         this.isInitialized = JSON.parse(storedInit);
@@ -46,7 +55,7 @@ export const useLaneStore = defineStore('lanes', {
 
     updateLaneStartTime(laneId: number, startTime: string) {
       const lane = this.lanes.find(l => l.id === laneId);
-      
+
       if (lane) {
         lane.started_at = startTime;
         this.saveLanesToStorage();
@@ -59,4 +68,5 @@ export const useLaneStore = defineStore('lanes', {
       localStorage.removeItem('lanes');
       localStorage.removeItem('isInitialized');
     }
-  }});
+  }
+});
