@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-gray-900 flex flex-col items-center p-6">
     <!-- Lanes Section -->
-    <div class="w-3/4 mb-8">
+    <div class="w-[90%] mb-8">
       <div class="flex justify-end mb-4">
         <button 
           @click="handleReset" 
@@ -20,7 +20,7 @@
     </div>
 
     <!-- Waitlist Section -->
-    <div class="w-3/4 bg-gray-800 p-6 rounded-md shadow-md">
+    <div class="w-[90%] bg-gray-800 p-6 rounded-md shadow-md">
       <h2 class="text-gray-100 text-lg font-semibold mb-4">Waitlist</h2>
       <form @submit.prevent="addComment" class="mb-6 flex gap-2">
         <input 
@@ -54,6 +54,7 @@
     </div>
   </div>
 </template>
+
 
 <script setup lang="ts">
 import { ref } from 'vue';
