@@ -1,10 +1,10 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import InitScreen from '../views/InitView.vue'
 import LaneView from '../views/LaneView.vue'
 import { useLaneStore } from '../stores/lanes'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes: [
     {
       path: '/vue-range-app/',
